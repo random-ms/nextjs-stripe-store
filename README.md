@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💳 Next.js + Stripe Payments Starter
 
-## Getting Started
+A streamlined, type-safe boilerplate for handling payments, subscriptions, and digital products. Built with **Next.js** (App Router), **Stripe**, and **Tailwind CSS**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Next.js App Router**: Optimized for SEO and speed using Server Components.
+* **Stripe Checkout**: Seamlessly redirect users to a secure, Stripe-hosted payment page.
+* **Stripe Webhooks**: Robust backend handling for `checkout.session.completed` and other events.
+* **Customer Portal**: Allow users to manage their own subscriptions and payment methods.
+* **Server Actions**: Securely handle Stripe session creation without dedicated API routes.
+* **Tailwind CSS**: Pre-styled pricing tables and checkout buttons.
+* **TypeScript**: Full type definitions for Stripe objects and API responses.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Tool | Purpose |
+| :--- | :--- |
+| **Next.js** | React Framework (App Router) |
+| **Stripe Node** | Server-side Payment Processing |
+| **Stripe SDK** | Client-side Stripe Elements |
+| **Tailwind CSS** | Styling & UI Components |
+| **TypeScript** | Static Typing |
+| **Vercel** | Deployment & Hosting |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🚀 Getting Started
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. Prerequisites
+* [Stripe Account](https://dashboard.stripe.com/) (Sign up for a free developer account)
+* Node.js v18.17 or later
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. Environment Setup
+Create a `.env.local` file in your root directory:
+
+```env
+# Stripe Keys (Found in Stripe Dashboard > Developers > API keys)
+STRIPE_SECRET_KEY=sk_test_51...
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_51...
+
+# Stripe Webhook Secret (Generated via Stripe CLI or Dashboard)
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+# App URL
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
